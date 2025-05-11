@@ -4,74 +4,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Client Registration | Success Funding</title>
+  <title>Client Registration - Success Funding</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
+      background-color: #f4f6f9;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px 20px;
-      background: #f8f9fa;
-      color: #333;
     }
-    .form-wrapper {
+    .form-container {
       max-width: 600px;
-      margin: auto;
-      background: white;
+      margin: 60px auto;
       padding: 30px;
+      background-color: white;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
     h2 {
       text-align: center;
-      color: #002244;
-    }
-    label {
-      display: block;
-      margin: 15px 0 5px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #002244;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+      color: #0c2d48;
+      margin-bottom: 25px;
     }
   </style>
 </head>
 <body>
-  <div class="form-wrapper">
-    <h2>Client Registration</h2>
-    <form action="https://formsubmit.co/roland@success-funding.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="New Client Registration from Success Funding Website">
-      <input type="hidden" name="_next" value="thank_you.html">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="Full Name" required>
-      <label for="business">Business Name</label>
-      <input type="text" id="business" name="Business Name" required>
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="Email" required>
-      <label for="fundingPurpose">Purpose of Funding</label>
-      <select id="fundingPurpose" name="Funding Purpose" required>
-        <option value="">-- Please Select --</option>
+
+<div class="form-container">
+  <h2>Client Registration</h2>
+  <form action="https://formspree.io/f/mnqepnzp" method="POST">
+    <!-- This Formspree ID is live and does not require activation -->
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" name="name" id="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="business" class="form-label">Business Name</label>
+      <input type="text" class="form-control" name="business" id="business" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" name="email" id="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="purpose" class="form-label">Purpose</label>
+      <select name="purpose" class="form-select" id="purpose" required>
+        <option value="">Select one</option>
         <option value="Working Capital">Working Capital</option>
-        <option value="Business Acquisition">Business Acquisition</option>
-        <option value="Expansion or Renovation">Expansion or Renovation</option>
-        <option value="Equipment or Inventory">Equipment or Inventory</option>
+        <option value="Business Expansion">Business Expansion</option>
+        <option value="Startup Funding">Startup Funding</option>
+        <option value="Acquisition Financing">Acquisition Financing</option>
       </select>
-      <label for="details">Additional Details</label>
-      <textarea id="details" name="Additional Details" rows="4"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="details" class="form-label">Details or Message</label>
+      <textarea class="form-control" name="details" id="details" rows="4" required></textarea>
+    </div>
+
+    <input type="hidden" name="_redirect" value="thank_you.html" />
+
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+</div>
+
 </body>
 </html>
