@@ -1,20 +1,80 @@
 <!--
   File: registration_email_redirect.html
-  Last Updated: 2025-05-12 04:01 UTC
-  Description: Handles client registration form submission via FormSubmit
+  Last Updated: 2025-05-12 04:18 UTC
+  Description: Registration form with FormSubmit, dropdowns, and client ID
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Client Registration</title>
+  <script>
+    window.onload = function () {
+      const id = "CLT-" + Math.floor(1000000 + Math.random() * 9000000);
+      document.getElementById("client_id").value = id;
+    };
+  </script>
 </head>
 <body>
   <h1>Client Registration</h1>
   <form action="https://formsubmit.co/roland@success-funding.com" method="POST">
+    <input type="hidden" id="client_id" name="client_id">
+
     <label>Full Name:<br><input type="text" name="name" required></label><br><br>
+
     <label>Email Address:<br><input type="email" name="email" required></label><br><br>
-    <label>Brief Summary of Funding Need:<br><textarea name="message" required></textarea></label><br><br>
+
+    <label>Loan Amount:<br>
+      <select name="loan_amount" required>
+        <option value="">Select...</option>
+        <option>$30,000</option>
+        <option>$50,000</option>
+        <option>$100,000</option>
+        <option>$250,000</option>
+        <option>$500,000</option>
+        <option>$1,000,000</option>
+        <option>$2,000,000</option>
+        <option>$5,000,000</option>
+        <option>$10,000,000</option>
+        <option>$12,000,000</option>
+      </select>
+    </label><br><br>
+
+    <label>Time to Funding:<br>
+      <select name="funding_timeline" required>
+        <option value="">Select...</option>
+        <option>7 days</option>
+        <option>30 days</option>
+        <option>60 days</option>
+        <option>90 days</option>
+        <option>6 months</option>
+        <option>1 year</option>
+      </select>
+    </label><br><br>
+
+    <label>Loan Type:<br>
+      <select name="loan_type" required>
+        <option value="">Select...</option>
+        <option>Business Lines of Credit</option>
+        <option>Business with Real Estate</option>
+        <option>Ground Up</option>
+        <option>SBA</option>
+        <option>Term Loans</option>
+      </select>
+    </label><br><br>
+
+    <label>Collateral Type:<br>
+      <select name="collateral_type" required>
+        <option value="">Select...</option>
+        <option>Collateralized</option>
+        <option>Non-Collateralized</option>
+      </select>
+    </label><br><br>
+
+    <label>Brief Summary (optional):<br>
+      <textarea name="message" rows="5" cols="40"></textarea>
+    </label><br><br>
+
     <input type="hidden" name="_next" value="https://rolandsuccessfunding.github.io/success-funding-site/thank_you.html">
     <input type="hidden" name="_captcha" value="false">
     <button type="submit">Submit</button>
