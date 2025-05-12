@@ -1,17 +1,19 @@
-<!--
-  File: registration_email_redirect.html
-  Last Updated: 2025-05-12 @ 03:39 UTC
-  Description: Handles client registration form submission via FormSubmit
--->
+<!-- registration_email_redirect.html -->
+<!-- Last updated: 2025-05-12 03:51 UTC -->
 <!DOCTYPE html>
-<html>
-<head><title>Client Registration</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Registration</title>
+</head>
 <body>
   <h1>Client Registration</h1>
-  <form action="https://formsubmit.co/ab879898b2f7306e7173c342d4fe6dac" method="POST">
+  <form action="https://formsubmit.co/roland@success-funding.com" method="POST">
     <label>Full Name:<br><input type="text" name="name" required></label><br><br>
     <label>Email Address:<br><input type="email" name="email" required></label><br><br>
     <label>Brief Summary of Funding Need:<br><textarea name="message" required></textarea></label><br><br>
+    <input type="hidden" name="_next" value="https://rolandsuccessfunding.github.io/success-funding-site/thank_you.html">
+    <input type="hidden" name="_captcha" value="false">
     <button type="submit">Submit</button>
   </form>
 </body>
