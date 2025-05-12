@@ -1,29 +1,18 @@
-<!-- Last Updated: 2025-05-12 03:27 UTC -->
-<!-- Description: Client registration form using FormSubmit -->
+<!--
+  File: registration_email_redirect.html
+  Last Updated: 2025-05-12 @ 03:39 UTC
+  Description: Handles client registration form submission via FormSubmit
+-->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Client Registration</title>
-</head>
+<html>
+<head><title>Client Registration</title></head>
 <body>
-    <h1>Client Registration</h1>
-    <form action="https://formsubmit.co/ab879898b2f7306e7173c342d4fe6dac" method="POST">
-        <label>Full Name:<br><input type="text" name="name" required></label><br><br>
-        <label>Email Address:<br><input type="email" name="email" required></label><br><br>
-        <label>Loan Type:<br>
-            <select name="loan_type" required>
-                <option value="Business Acquisition">Business Acquisition</option>
-                <option value="SBA Loan">SBA Loan</option>
-                <option value="Working Capital">Working Capital</option>
-                <option value="Hard Money">Hard Money</option>
-            </select>
-        </label><br><br>
-        <label>Funding Amount:<br><input type="text" name="funding_amount"></label><br><br>
-        <label>Timeline for Funds:<br><input type="text" name="timeline"></label><br><br>
-        <label>Brief Summary of Funding Need:<br><textarea name="message"></textarea></label><br><br>
-        <input type="hidden" name="_next" value="thank_you.html">
-        <input type="submit" value="Submit">
-    </form>
+  <h1>Client Registration</h1>
+  <form action="https://formsubmit.co/ab879898b2f7306e7173c342d4fe6dac" method="POST">
+    <label>Full Name:<br><input type="text" name="name" required></label><br><br>
+    <label>Email Address:<br><input type="email" name="email" required></label><br><br>
+    <label>Brief Summary of Funding Need:<br><textarea name="message" required></textarea></label><br><br>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
