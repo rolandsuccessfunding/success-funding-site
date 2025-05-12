@@ -1,42 +1,29 @@
-<!--
-  File: registration_email_redirect.html
-  Last Updated: 2025-05-12 03:07 UTC
-  Purpose: Registration form for Success Funding
-  Notes: Posts data to Google Apps Script endpoint and redirects to thank_you.html
--->
+<!-- Last Updated: 2025-05-12 03:27 UTC -->
+<!-- Description: Client registration form using FormSubmit -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Client Registration</title>
+    <meta charset="UTF-8">
+    <title>Client Registration</title>
 </head>
 <body>
-  <h1>Client Registration</h1>
-  <form id="funding-form" action="https://script.google.com/macros/s/AKfycbx3ScO_LApEwnHqNThV37c4rRaQnBTyepuqnYUaKGZ4s0Of1CVqsCf67j4fLn8uuN_p/exec" method="POST">
-    <label for="name">Full Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="email">Email Address:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="message">Brief Summary of Funding Need:</label><br>
-    <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
-
-    <input type="submit" value="Submit">
-  </form>
-  <script>
-    document.getElementById("funding-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form)
-      }).then(() => {
-        window.location.href = "thank_you.html";
-      }).catch(() => {
-        alert("Error submitting the form. Please try again.");
-      });
-    });
-  </script>
+    <h1>Client Registration</h1>
+    <form action="https://formsubmit.co/ab879898b2f7306e7173c342d4fe6dac" method="POST">
+        <label>Full Name:<br><input type="text" name="name" required></label><br><br>
+        <label>Email Address:<br><input type="email" name="email" required></label><br><br>
+        <label>Loan Type:<br>
+            <select name="loan_type" required>
+                <option value="Business Acquisition">Business Acquisition</option>
+                <option value="SBA Loan">SBA Loan</option>
+                <option value="Working Capital">Working Capital</option>
+                <option value="Hard Money">Hard Money</option>
+            </select>
+        </label><br><br>
+        <label>Funding Amount:<br><input type="text" name="funding_amount"></label><br><br>
+        <label>Timeline for Funds:<br><input type="text" name="timeline"></label><br><br>
+        <label>Brief Summary of Funding Need:<br><textarea name="message"></textarea></label><br><br>
+        <input type="hidden" name="_next" value="thank_you.html">
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
