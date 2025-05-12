@@ -1,85 +1,27 @@
-<!-- Updated: 2025-05-12 00:43 UTC -->
 <!--
-  Last Updated: 2025-05-12 00:23 UTC
-  Change: Switched from FormSubmit to Formspree
-  Reason: Email was not being delivered via FormSubmit
-  Author: ChatGPT
+  File: registration_email_redirect.html
+  Last Updated: 2025-05-12 02:42 UTC
+  Purpose: Registration form for Success Funding
+  Notes: Submits user details to Google Apps Script endpoint
 -->
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Client Registration | Success Funding</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px 20px;
-      background: #f8f9fa;
-      color: #333;
-    }
-    .form-wrapper {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #002244;
-    }
-    label {
-      display: block;
-      margin: 15px 0 5px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #002244;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-  </style>
+  <title>Client Registration</title>
 </head>
 <body>
-  <div class="form-wrapper">
-    <h2>Client Registration</h2>
-    <form action="https://formsubmit.co/roland@success-funding.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="New Client Registration from Success Funding Website">
-      <input type="hidden" name="_next" value="thank_you.html">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="Full Name" required>
-      <label for="business">Business Name</label>
-      <input type="text" id="business" name="Business Name" required>
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="Email" required>
-      <label for="fundingPurpose">Purpose of Funding</label>
-      <select id="fundingPurpose" name="Funding Purpose" required>
-        <option value="">-- Please Select --</option>
-        <option value="Working Capital">Working Capital</option>
-        <option value="Business Acquisition">Business Acquisition</option>
-        <option value="Expansion or Renovation">Expansion or Renovation</option>
-        <option value="Equipment or Inventory">Equipment or Inventory</option>
-      </select>
-      <label for="details">Additional Details</label>
-      <textarea id="details" name="Additional Details" rows="4"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+  <h1>Client Registration</h1>
+  <form action="https://script.google.com/macros/s/AKfycbx3ScO_LApEwnHqNThV37c4rRaQnBTypeupnYUaKGZ4s0Of1CVqsCf67j4fLn8uuN_p/exec" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>
